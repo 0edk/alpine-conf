@@ -1,0 +1,9 @@
+[Desktop Entry]
+Type=Application
+Name=Lynx
+GenericName=Web browser
+Comment=Web browser
+TryExec=lynx
+Exec=xterm -vb -e lynx %U
+Terminal=true
+MimeType=text/html;application/xhtml+xml;text/xml;application/xml;

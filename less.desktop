@@ -1,0 +1,9 @@
+[Desktop Entry]
+Type=Application
+Name=Less
+GenericName=File pager
+Comment=File pager
+TryExec=less
+Exec=xterm -vb -e less %U
+Terminal=true
+MimeType=text/plain;

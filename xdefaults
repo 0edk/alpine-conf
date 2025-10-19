@@ -1,0 +1,9 @@
+xterm*Background: black
+xterm*Foreground: white
+xterm*altIsNotMeta: true
+xterm*altSendsEscape: true
+xterm*backarrowKeyIsErase: true
+xterm*visualBell: true
+xterm*selectToClipboard: true
+*VT100*translations: #override \n\
+    Alt <Btn1Down>: spawn-new-terminal()

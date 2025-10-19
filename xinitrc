@@ -1,0 +1,21 @@
+#!/bin/sh
+echo "$PATH"
+PATH="${PATH}:${HOME}/bin"
+setxkbmap 'us(dvorak)'
+setxkbmap -option compose:ralt
+setxkbmap -option custom:dostuff
+export GTK_IM_MODULE=ibus
+export QT_IM_MODULE=ibus
+export XMODIFIERS='@im=ibus'
+xrdb -load "${HOME}/2022/alpine_conf/xdefaults"
+redshift &
+update_statusbar &
+xset r rate 200
+amixer set Master playback 0dB
+export $(dbus-launch)
+"$HOME/.cabal/bin/arbtt-capture" -f "$HOME/perennial/activity_log/arbtt_$(date "+%Y-%j").log" &
+pulseaudio &
+ibus-daemon --xim --daemonize
+launch_workspace &
+exec dwm
+

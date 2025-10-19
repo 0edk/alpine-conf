@@ -1,0 +1,7 @@
+partial modifier_keys
+xkb_symbols "dostuff" {
+    replace key <CAPS> { [ Control_L ] };
+    replace key <RCTL> { [ Escape ] };
+    modifier_map Control { <CAPS> };
+};
+

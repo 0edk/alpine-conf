@@ -1,0 +1,15 @@
+# IPA (International Phonetic Alphabet) Compose key sequences
+# (beyond that included in locale defaults)
+# Pulmonic consonants
+<Multi_key> <slash> <question> : "ʔ" U0294
+<Multi_key> <r> <r> : "ɹ" U0279
+<Multi_key> <s> <h> : "ʃ" U0283
+<Multi_key> <z> <h> : "ʒ" U0292
+# Vowels
+<Multi_key> <i> <i> : "ɪ" U026A
+<Multi_key> <h> <u> : "ʊ" U028A
+<Multi_key> <a> <l> <a> : "ɑ" U0251
+<Multi_key> <a> <g> <a> : "ɒ" U0252
+<Multi_key> <v> <v> : "ʌ" U028C
+<Multi_key> <r> <c> : "ɔ" U0254
+<Multi_key> <r> <g> <e> : "ɜ" U025C
