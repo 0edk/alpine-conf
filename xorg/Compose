@@ -1,6 +1,6 @@
 # Xorg Compose key configuration
 include "%L"
-include "%H/2022/alpine_conf/greek.compose"
-include "%H/2022/alpine_conf/ipa.compose"
+include "%H/2022/alpine_conf/xorg/greek.compose"
+include "%H/2022/alpine_conf/xorg/ipa.compose"
 <Multi_key> <space> <underscore> : "̄" U0304 # COMBINING MACRON
 <Multi_key> <i> <n>              : "∈" U2208 # ELEMENT OF
