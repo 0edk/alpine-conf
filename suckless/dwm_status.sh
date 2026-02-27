@@ -16,7 +16,7 @@ batt_dir='/sys/class/power_supply/BAT0'
 printf '^d^^r5,1,4,3^^r3,3,8,15^'
 batt_state="$(cat "${batt_dir}/status")"
 case "$batt_state" in
-    Charging) printf '^c#FFFF00^^r5,6,4,9^' ;;
+    Charging) printf '^c#80C000^^r4,5,6,11^' ;;
     Full) printf '^c#00FF00^^r5,6,4,9^' ;;
     Discharging) ;;
     Unknown) ;;
@@ -25,7 +25,16 @@ printf '^f15^'
 batt_now="$(cat "${batt_dir}/charge_now")"
 batt_full="$(cat "${batt_dir}/charge_full")"
 batt_severe=`printf 'l(%d/%d)/l(2)\n' "$batt_full" "$batt_now" | bc -l`
-show_bar "$batt_severe" "FFFF00"
+quintile=`printf '5*%d/%d\n' "$batt_now" "$batt_full" | bc -q`
+batt_col='FFFF00'
+if [ "$quintile" -ge 4 ]
+then
+    batt_col='C0FF00'
+elif [ "$quintile" -lt 1 ]
+then
+    batt_col='FFC000'
+fi
+show_bar "$batt_severe" "$batt_col"
 
 printf '^d^^r4,4,12,12^^r5,1,2,18^^r9,1,2,18^^r13,1,2,18^'
 printf '^r1,5,18,2^^r1,9,18,2^^r1,13,18,2^^f24^'
